@@ -1,5 +1,3 @@
-// PCL lib Functions for processing point clouds 
-
 #ifndef PROCESSPOINTCLOUDS_H_
 #define PROCESSPOINTCLOUDS_H_
 
@@ -17,15 +15,14 @@
 #include <vector>
 #include <ctime>
 #include <chrono>
+#include <filesystem>
 #include "render/box.h"
 
 template<typename PointT>
 class ProcessPointClouds {
 public:
 
-    //constructor
     ProcessPointClouds();
-    //deconstructor
     ~ProcessPointClouds();
 
     void numPoints(typename pcl::PointCloud<PointT>::Ptr cloud);
@@ -44,7 +41,10 @@ public:
 
     typename pcl::PointCloud<PointT>::Ptr loadPcd(std::string file);
 
-    std::vector<boost::filesystem::path> streamPcd(std::string dataPath);
-  
+    std::vector<std::filesystem::path> streamPcd(std::string dataPath);
+
 };
+
+#include "processPointClouds.cpp"
+
 #endif /* PROCESSPOINTCLOUDS_H_ */
