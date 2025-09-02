@@ -29,3 +29,6 @@ environment
 # Backup files
 *~
 *.bak
+
+# Personal notes and guides (keep local only)
+GitHub_Workflow_Guide.md
